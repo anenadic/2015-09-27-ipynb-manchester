@@ -1,16 +1,17 @@
 ---
 layout: workshop
 root: .
+title: IPython Notebook and Jupyter Workshop
 venue: University of Manchester
-address: Room IT 407, University of Manchester, Oxford Rd
+address: Room IT 407, University of Manchester, Oxford Road, M13 9PL
 latlng: 53.4674, -2.23396
-humandate: May 27, 2015
+humandate: October 2, 2015
 humantime: 9:30-17:00
-startdate: 2015-05-27
-enddate: 2015-05-27
+startdate: 2015-10-02
+enddate: 2015-10-02
 instructor: ["Aleksandra Pawlik"]
 helper: ["Alan Williams"]
-contact: alan.r.williams@manchester.ac.uk 
+contact: "alan.r.williams@manchester.ac.uk"
 ---
 
 
@@ -18,12 +19,18 @@ contact: alan.r.williams@manchester.ac.uk
 <h2>Workshop information</h2>
 
 <p>
-This workshop is an introduction to using IPython Notebook and Jupyter. 
-During the hands-on sesssions the participants will learn how to use the Notebook
-for their research purposes - combining executable code to analyse and visualise data 
-with notes, images and other references. 
+  This workshop is an introduction to using IPython Notebook and Jupyter, organised
+  by <a href="http://elixir-uk.org/">ELIXIR-UK</a>.
+  During the hands-on sessions the participants will learn how to use the Notebook
+  for their research purposes - combining executable code to analyse and visualise data
+  with notes, images and other references.
 </p>
 
+
+<p>
+  <strong>Date:</strong>
+  {{page.humandate}}, {{page.humantime}}
+</p>
 
 <!--
   AUDIENCE
@@ -47,7 +54,7 @@ with notes, images and other references.
 -->
 {% if page.latlng %}
 <p>
-  <strong>Where:</strong>
+  <strong>Location:</strong>
   {{page.address}}.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
@@ -57,22 +64,40 @@ with notes, images and other references.
 {% endif %}
 
 <p>
+  <strong>Instructors:</strong>
+  {% if page.instructor %}
+  {{page.instructor | join: ', ' %}}
+  {% else %}
+  To be announced
+  {% endif %}
+</p>
+<p>
+  <strong>Helpers:</strong>
+  {% if page.helper %}
+  {{page.helper | join: ', ' %}}
+  {% else %}
+  To be announced
+  {% endif %}
+</p>
+
+<p>
   <strong>Requirements:</strong> Participants should bring a laptop with
   a few specific software packages installed (listed
-  <a href="#setup">below</a>). 
- <br />
+  <a href="#setup">below</a>).
+<p>
   Also, please download <a href="https://github.com/apawlik/2015-05-27-ipynb-workshop/blob/training_materials/ipython-in-depth.zip?raw=true">
   the full training package "IPython in depth"</a> developed by the IPython and Jupyter team
   (most of this training material was used at the <a href="https://www.youtube.com/watch?v=XFw1JVXKJss">tutorial</a> run at PyCon 2014.
-  <br />
-  Please download also the materials <a href="https://github.com/apawlik/2015-05-27-ipynb-workshop/blob/training_materials/data_manipulation.zip?raw=true"> for the data manipulation and visualisation module</a>. These materials have been created and are 
+</p>
+<p>
+  Please also download the materials <a href="https://github.com/apawlik/2015-05-27-ipynb-workshop/blob/training_materials/data_manipulation.zip?raw=true"> for the data manipulation and visualisation module</a>. These materials have been created and are
   maintained by the <a href="http://software-carpentry.org/">Software Carpentry Foundation</a>.
-<br />
-<br />
-<a href="https://swcuk.etherpad.mozilla.org/30"> Etherpad</a>
+</p>
+</p>
+<p>
+  <strong>Etherpad (to be used at workshop for sharing notes):</strong> <a href="https://etherpad.mozilla.org/wZss7olhdC">https://etherpad.mozilla.org/wZss7olhdC</a>
 
 </p>
-
 <!--
   CONTACT EMAIL ADDRESS
 
@@ -82,11 +107,11 @@ with notes, images and other references.
 -->
 <p>
   <strong>Contact</strong>:
-  Please mail
+  Please email
   {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
   {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
   {% endif %}
   for more information.
 </p>
@@ -102,7 +127,7 @@ with notes, images and other references.
 
 <div class="row">
   <div class="col-md-9">
-      <table class="table table-striped">
+    <table class="table table-striped">
       <tr> <td>09:30</td>  <td>Arrival and setup help</td> </tr>
       <tr> <td>10:00</td> <td>Introduction: using the Notebook interface</td> </tr>
       <tr> <td>11:00</td>  <td>Coffee break</td> </tr>
@@ -139,46 +164,39 @@ with notes, images and other references.
 </p>
 {% endif %}
 
-<hr/>
-
-
-
-<hr/>
-
-
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in the workshop, you will need 
-  access to the software described below. In addition, you will 
+  To participate in the workshop, you will need
+  access to the software described below. In addition, you will
   need an up-to-date web browser.
 
-<!--  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
-  <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>. -->
+  <!--  We maintain a list of common issues that occur during installation as a reference for instructors
+    that may be useful on the
+    <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>. -->
 </p>
 
 
-<div id="python"> 
+<div id="python">
 
   <h3>Python</h3>
 
 
-    <p>
-      IPython Notebook
-      runs in a web browser. For this to work you will need a reasonably
-      up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all <a 
-      href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a> 
-      (some older browsers, including Internet Explorer version 9 
-      and below, are not). <br/>
-      For the purposes of this workshop we will mainly work with Python 2.
-      Hence the installation instructions refer to Python 2. However, if you are already running Python 3
-      and do not wish to change your default Python, simply chose the installation for version 3.
-    </p>
+  <p>
+    IPython Notebook
+    runs in a Web browser. For this to work you will need a reasonably
+    up-to-date browser. The current versions of the Chrome, Safari and
+    Firefox browsers are all <a
+          href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a>
+    (some older browsers, including Internet Explorer version 9
+    and below, are not).
+  </p>
+  <p>
+    For the purposes of this workshop we will mainly work with Python 2.
+    Hence the installation instructions refer to Python 2. However, if you are already running Python 3
+    and do not wish to change your default Python, simply chose the installation for version 3.
+  </p>
 
-  <div class="row">
-    <div class="col-md-4">
       <h4 id="python-windows">Windows</h4>
       <ul>
         <li>
@@ -187,13 +205,11 @@ with notes, images and other references.
         </li>
         <li>
           Download the default Python 2 installer (do not follow the link to version 3).
-          Use all of the defaults for installation
+          Use all of the defaults for installation,
           <em>except</em> make sure to check
-          <strong>Make Anaconda the default Python</strong>.
+          <strong>'Make Anaconda the default Python'</strong> option.
         </li>
       </ul>
-    </div>
-    <div class="col-md-4">
       <h4 id="python-macosx">Mac OS X</h4>
       <ul>
         <li>
@@ -205,8 +221,6 @@ with notes, images and other references.
           Use all of the defaults for installation.
         </li>
       </ul>
-    </div>
-    <div class="col-md-4">
       <h4 id="python-linux">Linux</h4>
       <p>
         We recommend the all-in-one scientific Python installer
@@ -219,7 +233,7 @@ with notes, images and other references.
         <li>
           Download the installer that matches your operating
           system and save it in your home folder.
-          Download the default Python 2 installer (do not follow the link to version 3). 
+          Download the default Python 2 installer (do not follow the link to version 3).
         </li>
         <li>
           Open a terminal window.
@@ -239,15 +253,13 @@ with notes, images and other references.
           (this makes the Anaconda distribution the default Python).
         </li>
       </ol>
-    </div>
-  </div>
 </div> <!-- End of 'Python' section. -->
 
 <h2>Selected reference and training materials</h2>
 
 <div class="row">
   <div class="col-md-9">
-    <p>Some useful training materials for learning IPython Notebook and Jyputer</p>
+    <p>Some useful training materials for learning IPython Notebook and Jupyter</p>
     <ul>
       <li>Video tutorial (2014) <a href="https://www.youtube.com/watch?v=XFw1JVXKJss">"IPython in depth: high productivity interactive and parallel Python"</a> </li>
       <li>Official <a href="http://ipython.org/ipython-doc/3/notebook/notebook.html">IPython Notebook user guide</a></li>
